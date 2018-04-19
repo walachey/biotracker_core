@@ -204,26 +204,26 @@ void ControllerAnnotations::setPlayerParameters(playerParameters* parameters)
 	emit(onRepaintRequired());
 }
 
-void ControllerAnnotations::receiveAddLabelAnno(){
+void ControllerAnnotations::receiveAddLabelAnnotation(){
 	actionQueued = ActionQueued::CreateLabel;
 }
-void ControllerAnnotations::receiveAddRectAnno(){
+void ControllerAnnotations::receiveAddRectAnnotation(){
 	actionQueued = ActionQueued::CreateRect;
 }
-void ControllerAnnotations::receiveAddArrAnno(){
+void ControllerAnnotations::receiveAddArrowAnnotation(){
 	actionQueued = ActionQueued::CreateArrow;
 }
-void ControllerAnnotations::receiveAddEllAnno(){
+void ControllerAnnotations::receiveAddEllipseAnnotation(){
 	actionQueued = ActionQueued::CreateEllipse;
 }
-void ControllerAnnotations::receiveDelSelAnno(){
+void ControllerAnnotations::receiveDeleteSelectedAnnotation(){
 	auto model = static_cast<Annotations*>(getModel());
 	if (model->removeSelection()){
 		updateView();
 	}
 }
 
-void ControllerAnnotations::receiveSetAnnoColor(QColor color)
+void ControllerAnnotations::receiveSetAnnotationColor(QColor color)
 {
 	AnnotationsView* view = dynamic_cast<AnnotationsView*>(m_View);
 	if (view) {

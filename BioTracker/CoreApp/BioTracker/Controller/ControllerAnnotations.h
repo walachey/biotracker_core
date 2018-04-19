@@ -36,12 +36,12 @@ public:
 	void setPlayerParameters(playerParameters* parameters);
 
 	//annotation receivers
-	void receiveAddLabelAnno();
-	void receiveAddRectAnno();
-	void receiveAddArrAnno();
-	void receiveAddEllAnno();
-	void receiveDelSelAnno();
-	void receiveSetAnnoColor(QColor color);
+	void receiveAddLabelAnnotation();
+	void receiveAddRectAnnotation();
+	void receiveAddArrowAnnotation();
+	void receiveAddEllipseAnnotation();
+	void receiveDeleteSelectedAnnotation();
+	void receiveSetAnnotationColor(QColor color);
 
 protected:
 	void createModel(std::string filepath = "");
