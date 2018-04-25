@@ -51,13 +51,13 @@ public:
 		/// Saving requires writing properties to vector of strings.
 		virtual std::vector<std::string> serializeToVector() const;
 		virtual void deserializeFrom(std::queue<std::string> &args);
-		/// Set text. Called when right clicking.
-		virtual void setText(QString newText) { text = newText; };
-		/// Get text.Called when right clicking.
-		virtual QString getText() { return text; };
+		// Set text. Called when right clicking.
+		virtual void setText(QString newText) { text = newText; }
+		// Get text. Called when right clicking.
+		virtual QString getText() { return text; }
 		// Called either during dragging or when the mouse is released.
-		//Needs to update positional data.
-		virtual bool onEndAnnotation(QPoint currentPosition) { origin = currentPosition;  return true; };
+		// Needs to update positional data.
+		virtual bool onEndAnnotation(QPoint currentPosition) { origin = currentPosition;  return true; }
 		virtual QRectF boundingRect() const { return QRect(origin, origin).marginsAdded({ 20, 20, 20, 20 }); }
 		// Used for mouse-click events.
 		// Returns the handle that has been clicked.
@@ -93,7 +93,7 @@ public:
 		virtual std::string name() const override { return "arrow"; }
 		virtual void deserializeFrom(std::queue<std::string> &args);
 		virtual std::vector<std::string> serializeToVector() const;
-		virtual bool onEndAnnotation(QPoint currentPosition) override { arrowHead = currentPosition; return true; };
+		virtual bool onEndAnnotation(QPoint currentPosition) override { arrowHead = currentPosition; return true; }
 		virtual void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) const override;
 		virtual QRectF boundingRect() const { return QRect(origin, arrowHead).marginsAdded({ 20, 20, 20, 20 }); }
 		virtual QPoint *getHandleForPosition(const QPoint &pos) override;
@@ -110,7 +110,7 @@ public:
 		virtual std::string name() const override { return "rect"; }
 		virtual void deserializeFrom(std::queue<std::string> &args);
 		virtual std::vector<std::string> serializeToVector() const;
-		virtual bool onEndAnnotation(QPoint currentPosition) override { bottomRight = currentPosition; return true; };
+		virtual bool onEndAnnotation(QPoint currentPosition) override { bottomRight = currentPosition; return true; }
 		virtual void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) const override;
 		virtual QRectF boundingRect() const { return QRect(origin, bottomRight).marginsAdded({ 20, 20, 20, 20 }); }
 		virtual QPoint *getHandleForPosition(const QPoint &pos) override;
@@ -126,7 +126,7 @@ public:
 		virtual std::string name() const override { return "ellipse"; }
 		virtual void deserializeFrom(std::queue<std::string> &args);
 		virtual std::vector<std::string> serializeToVector() const;
-		virtual bool onEndAnnotation(QPoint currentPosition) override { bottomRight = currentPosition; return true; };
+		virtual bool onEndAnnotation(QPoint currentPosition) override { bottomRight = currentPosition; return true; }
 		virtual void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) const override;
 		virtual QRectF boundingRect() const { return QRect(origin, bottomRight).marginsAdded({ 20, 20, 20, 20 }); }
 		virtual QPoint *getHandleForPosition(const QPoint &pos) override;
