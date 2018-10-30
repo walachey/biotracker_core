@@ -31,11 +31,14 @@ public:
 	IModelTrackedComponent *getChild(int index) override;
     IModelTrackedComponent *getValidChild(int index) override;
 	IModelTrackedComponent *getLastChild() override;
+	QList<IModelTrackedComponent*> getChildNodes() override;
+	void setChildNodes(QList<IModelTrackedComponent*> n) override;
+
 
     int size() override;
     int validCount();
 
-private:
+protected:
 	QList<IModelTrackedComponent*> _TrackedComponents;
 
 	QString name;

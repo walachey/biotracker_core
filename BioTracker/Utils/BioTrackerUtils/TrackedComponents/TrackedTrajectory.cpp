@@ -79,6 +79,15 @@ int TrackedTrajectory::size()
     return _TrackedComponents.size();
 }
 
+QList<IModelTrackedComponent*> TrackedTrajectory::getChildNodes()
+{
+	return _TrackedComponents;
+}
+void TrackedTrajectory::setChildNodes(QList<IModelTrackedComponent*> n)
+{
+	_TrackedComponents = n;
+}
+
 int TrackedTrajectory::validCount()
 {
     int c = 0;

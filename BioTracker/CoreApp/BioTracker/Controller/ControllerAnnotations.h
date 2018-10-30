@@ -1,10 +1,12 @@
 #pragma once
 
+#include "Model/Annotations.h"
 #include "Interfaces/IController/IController.h"
 #include "QString"
 #include <QColor>
 #include <QMouseEvent>
 #include <QKeyEvent>
+
 
 struct playerParameters;
 
@@ -59,6 +61,7 @@ protected:
 	};
 	ActionQueued actionQueued{ ActionQueued::None };
 	void updateView();
+	Annotations::TrackedPoint snapToTrajectory(const QPoint &point);
 Q_SIGNALS:
 	void onRepaintRequired();
 };

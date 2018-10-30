@@ -61,12 +61,9 @@ public:
 	std::chrono::system_clock::time_point  getTime() { return _time; };
 
 
-    QList<IModelTrackedComponent*> getChildNodes() {
-        return _TrackedComponents;
-    }
-    void setChildNodes(QList<IModelTrackedComponent*> n) {
-        _TrackedComponents = n;
-    }
+	virtual QList<IModelTrackedComponent*> getChildNodes() = 0;
+	virtual void setChildNodes(QList<IModelTrackedComponent*> n) = 0;
+
     bool hasChildNodes() {
         return true;
     }
@@ -78,8 +75,6 @@ public:
 
 protected:
 	static int nextID;
-
-    QList<IModelTrackedComponent*> _TrackedComponents;
 };
 
 #endif // ITRACKEDOTRAJECTORY_H

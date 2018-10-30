@@ -1,4 +1,4 @@
-#include "ImageStream.h"
+﻿#include "ImageStream.h"
 
 #include "util/stdext.h"
 #include <cassert>    // assert
@@ -391,7 +391,7 @@ namespace BioTracker {
 				}
 			}
 			virtual GuiParam::MediaType type() const override {
-				return GuiParam::MediaType::Camera;
+                return GuiParam::MediaType::Camera;
 			}
 			virtual size_t numFrames() const override {
 				return -1; //TODO
@@ -416,8 +416,8 @@ namespace BioTracker {
 			virtual bool nextFrame_impl() override {
 				cv::Mat new_frame;
 
-				for (int i = 0; i < m_frame_stride; i++) {
-					m_capture >> new_frame;
+                for (int i = 0; i < m_frame_stride; i++) {
+                    m_capture >> new_frame;
 				}
 
 				std::shared_ptr<cv::Mat> mat(new cv::Mat(new_frame));

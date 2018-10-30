@@ -31,12 +31,15 @@ public:
 	IModelTrackedComponent *getChild(int index) override;
     IModelTrackedComponent* getValidChild(int index) override;
 	IModelTrackedComponent *getLastChild() override;
+	QList<IModelTrackedComponent*> getChildNodes() override;
+	void setChildNodes(QList<IModelTrackedComponent*> n) override;
     int size() override;
     int validCount() override;
     void setValid(bool v) override;
     void triggerRecalcValid();
 
 private:
+	QList<IModelTrackedComponent*> _TrackedComponents;
     int g_calcValid = 1;
     int g_validCount = 0;
     int _size = 0;
